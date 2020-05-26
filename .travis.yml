@@ -1,0 +1,29 @@
+# Config file for automatic testing at travis-ci.com
+
+language: python
+python:
+  - 3.8
+  - 3.7
+  - 3.6
+
+# Command to install dependencies, e.g. pip install -r requirements.txt --use-mirrors
+install:
+- pip install -U tox-travis
+
+script:
+- tox
+
+after_success:
+- pip install codecov
+- codecov
+
+- pip install Sphinx==3.0.3
+- pip install sphinx_rtd_theme==0.4.3
+- pip install .  # Seems to be required for the apidocs
+
+- cd docs
+- sphinx-apidoc ../thecolonel -o ./
+- make html
+- cd ..
+
+
