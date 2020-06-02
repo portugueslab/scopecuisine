@@ -7,17 +7,12 @@
 .. image:: https://codecov.io/gh/portugueslab/thecolonel/branch/master/graph/badge.svg
         :target: https://codecov.io/gh/portugueslab/thecolonel
 
-
+.. image:: https://upload.wikimedia.org/wikipedia/en/7/7f/Graham_Chapman_Colonel.jpg
 
 
 Python utilities for microscope control software
 
 This package has been developed in the `Portugues lab`_. Documentation can be found `here`_.
-
-Features
---------
-
-* TODO
 
 Credits
 -------
