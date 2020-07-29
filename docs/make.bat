@@ -9,7 +9,7 @@ if "%SPHINXBUILD%" == "" (
 )
 set SOURCEDIR=.
 set BUILDDIR=_build
-set SPHINXPROJ=thecolonel
+set SPHINXPROJ=scopecuisine
 
 if "%1" == "" goto help
 

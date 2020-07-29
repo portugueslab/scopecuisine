@@ -1,4 +1,4 @@
-* TheColonel version:
+* scopecuisine version:
 * Python version:
 * Operating System:
 

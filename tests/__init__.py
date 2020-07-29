@@ -1,1 +1,1 @@
-"""Unit test package for thecolonel."""
+"""Unit test package for scopecuisine."""

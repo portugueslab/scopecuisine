@@ -4,7 +4,7 @@
 # You can set these variables from the command line.
 SPHINXOPTS    =
 SPHINXBUILD   = python -msphinx
-SPHINXPROJ    = thecolonel
+SPHINXPROJ    = scopecuisine
 SOURCEDIR     = .
 BUILDDIR      = _build
 

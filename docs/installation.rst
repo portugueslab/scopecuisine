@@ -8,13 +8,13 @@ Installation
 Stable release
 --------------
 
-To install TheColonel, run this command in your terminal:
+To install scopecuisine, run this command in your terminal:
 
 .. code-block:: console
 
-    $ pip install thecolonel
+    $ pip install scopecuisine
 
-This is the preferred method to install TheColonel, as it will always install the most recent stable release.
+This is the preferred method to install scopecuisine, as it will always install the most recent stable release.
 
 If you don't have `pip`_ installed, this `Python installation guide`_ can guide
 you through the process.
@@ -26,19 +26,19 @@ you through the process.
 From sources
 ------------
 
-The sources for TheColonel can be downloaded from the `Github repo`_.
+The sources for scopecuisine can be downloaded from the `Github repo`_.
 
 You can either clone the public repository:
 
 .. code-block:: console
 
-    $ git clone git://github.com/portugueslab/thecolonel
+    $ git clone git://github.com/portugueslab/scopecuisine
 
 Or download the `tarball`_:
 
 .. code-block:: console
 
-    $ curl -OJL https://github.com/portugueslab/thecolonel/tarball/master
+    $ curl -OJL https://github.com/portugueslab/scopecuisine/tarball/master
 
 Once you have a copy of the source, you can install it with:
 
@@ -47,5 +47,5 @@ Once you have a copy of the source, you can install it with:
     $ python setup.py install
 
 
-.. _Github repo: https://github.com/portugueslab/thecolonel
-.. _tarball: https://github.com/portugueslab/thecolonel/tarball/master
+.. _Github repo: https://github.com/portugueslab/scopecuisine
+.. _tarball: https://github.com/portugueslab/scopecuisine/tarball/master

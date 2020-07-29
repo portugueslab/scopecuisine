@@ -1,4 +1,4 @@
-Welcome to TheColonel's documentation!
+Welcome to scopecuisine's documentation!
 ======================================
 
 .. toctree::

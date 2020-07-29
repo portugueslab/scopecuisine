@@ -2,6 +2,6 @@
 Usage
 =====
 
-To use TheColonel in a project::
+To use scopecuisine in a project::
 
-    import thecolonel
+    import scopecuisine

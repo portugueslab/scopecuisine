@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 
-"""Tests for `thecolonel` package."""
+"""Tests for `scopecuisine` package."""
 
 import pytest
 
