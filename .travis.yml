@@ -26,4 +26,18 @@ after_success:
 - make html
 - cd ..
 
+deploy:
+
+  - provider: pypi
+    skip_cleanup: true
+    distributions: sdist bdist_wheel
+    user: __token__
+    password:
+        secure: "kmO8poAaLW/ad4lht/yHLumVcxvr/p7wO+80s77NnqaJc3/EvMc3+XCTVAXhCkCAbnLW0aO2fEANbmhZbkRCzDkf0gXdxkhZkSVxq/SeXbLFmz+4VgrrkV/X2tfCVX2JI8+n+DGiDP/k/nVuaE3RcEn9vF3LyacbGqQH0RhWzgbQj1Qito+wrvnUgOuLVuj7E7688WM9AEzPsQvqvIxY0w3Mcq/S/MAoQVRaEGki2Pd9S8OyUB3W6M3bEjkwayhkf5o0IxrXZthuf8CLrXUzr4xiPAMNk5eINDrv2beGXdGSUPPNd/jAbpMtu+AdZMHNyypBNvkAWjNdBYyZoE6l0qJYO/WxU3urVsAPdBlUqqCH+nK2p/sHhto/Ig47xyiOkYD5JJxseQW0UoWt8PJ84yVDgw6CE9BNA1JwvsdKwkSjBib2J8vWjae9kph+X2O7YffVCs2x8Yq64ugBcxt+TjxzY0c5EjHxIMCNYE/QyD3j37w3G77x/vDhZ6Vl/AOtWRTYj+x76dKt6AqCGV//IXYlNg09prqJW563gd2IZfmzJxnyYg18vQzjcaJdXWwPd3SeOXJgZrpa/M6EzEMFye0pJphbU7GH+Ta62F4/VdGZSlBrcomsIRdY/ethqHwlooEQDC3pzxh1l13NOlZ+/wnV0lZJEjRMOoIeaACb61c="    on:
+    on:
+      branch: master
+      python: 3.8
+    skip_existing: true
+    committer-from-gh: true
+
 
