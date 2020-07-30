@@ -1,4 +1,4 @@
-from theknights._task_modules.triggering.start_trigger import StartTrigger
+from scopecuisine.theknights._task_modules.triggering.start_trigger import StartTrigger
 
 class Triggers(object):
     def __init__(self, task_handle):

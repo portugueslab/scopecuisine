@@ -6,7 +6,7 @@ from __future__ import unicode_literals
 import ctypes
 import warnings
 
-from theknights.error_codes import DAQmxErrors, DAQmxWarnings
+from scopecuisine.theknights.error_codes import DAQmxErrors, DAQmxWarnings
 
 __all__ = ['DaqError', 'DaqWarning', 'DaqResourceWarning']
 

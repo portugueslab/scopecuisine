@@ -1,19 +1,19 @@
-from theknights._task_modules.export_signals import ExportSignals
-from theknights._task_modules.in_stream import InStream
-from theknights._task_modules.timing import Timing
-from theknights._task_modules.triggers import Triggers
-from theknights._task_modules.out_stream import OutStream
-from theknights._task_modules.ai_channel_collection import (
+from scopecuisine.theknights._task_modules.export_signals import ExportSignals
+from scopecuisine.theknights._task_modules.in_stream import InStream
+from scopecuisine.theknights._task_modules.timing import Timing
+from scopecuisine.theknights._task_modules.triggers import Triggers
+from scopecuisine.theknights._task_modules.out_stream import OutStream
+from scopecuisine.theknights._task_modules.ai_channel_collection import (
     AIChannelCollection)
-from theknights._task_modules.ao_channel_collection import (
+from scopecuisine.theknights._task_modules.ao_channel_collection import (
     AOChannelCollection)
-from theknights._task_modules.ci_channel_collection import (
+from scopecuisine.theknights._task_modules.ci_channel_collection import (
     CIChannelCollection)
-from theknights._task_modules.co_channel_collection import (
+from scopecuisine.theknights._task_modules.co_channel_collection import (
     COChannelCollection)
-from theknights._task_modules.di_channel_collection import (
+from scopecuisine.theknights._task_modules.di_channel_collection import (
     DIChannelCollection)
-from theknights._task_modules.do_channel_collection import (
+from scopecuisine.theknights._task_modules.do_channel_collection import (
     DOChannelCollection)
 
 
