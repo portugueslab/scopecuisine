@@ -4,17 +4,23 @@ from scopecuisine.theknights._task_modules.timing import Timing
 from scopecuisine.theknights._task_modules.triggers import Triggers
 from scopecuisine.theknights._task_modules.out_stream import OutStream
 from scopecuisine.theknights._task_modules.ai_channel_collection import (
-    AIChannelCollection)
+    AIChannelCollection,
+)
 from scopecuisine.theknights._task_modules.ao_channel_collection import (
-    AOChannelCollection)
+    AOChannelCollection,
+)
 from scopecuisine.theknights._task_modules.ci_channel_collection import (
-    CIChannelCollection)
+    CIChannelCollection,
+)
 from scopecuisine.theknights._task_modules.co_channel_collection import (
-    COChannelCollection)
+    COChannelCollection,
+)
 from scopecuisine.theknights._task_modules.di_channel_collection import (
-    DIChannelCollection)
+    DIChannelCollection,
+)
 from scopecuisine.theknights._task_modules.do_channel_collection import (
-    DOChannelCollection)
+    DOChannelCollection,
+)
 
 
 class Task(object):
@@ -22,7 +28,7 @@ class Task(object):
     Represents a fake DAQmx Task.
     """
 
-    def __init__(self, new_task_name='The_knights(who_say_NI)'):
+    def __init__(self, new_task_name="The_knights(who_say_NI)"):
         """
         Creates a fake DAQmx task.
         """
@@ -49,7 +55,7 @@ class Task(object):
         return not self.__eq__(other)
 
     def __repr__(self):
-        return 'Task(name={0})'.format(self.name)
+        return "Task(name={0})".format(self.name)
 
     @property
     def channels(self):
@@ -69,7 +75,7 @@ class Task(object):
     @property
     def devices(self):
 
-       pass
+        pass
 
     @property
     def number_of_devices(self):
@@ -172,30 +178,37 @@ class Task(object):
 
         return True
 
-    def read(self, number_of_samples_per_channel=1,
-             timeout=10.0):
+    def read(self, number_of_samples_per_channel=1, timeout=10.0):
 
-        return [0.] * number_of_samples_per_channel
+        return [0.0] * number_of_samples_per_channel
 
     def register_done_event(self, callback_method):
 
         pass
 
     def register_every_n_samples_acquired_into_buffer_event(
-        self, sample_interval, callback_method):
+        self, sample_interval, callback_method
+    ):
 
         pass
 
     def register_every_n_samples_transferred_from_buffer_event(
-        self, sample_interval, callback_method):
+        self, sample_interval, callback_method
+    ):
 
         pass
 
     def register_signal_event(self, signal_type, callback_method):
         pass
 
-    def save(self, save_as="", author="", overwrite_existing_task=False,
-             allow_interactive_editing=True, allow_interactive_deletion=True):
+    def save(
+        self,
+        save_as="",
+        author="",
+        overwrite_existing_task=False,
+        allow_interactive_editing=True,
+        allow_interactive_deletion=True,
+    ):
 
         pass
 
@@ -211,13 +224,13 @@ class Task(object):
 
         pass
 
-    def _raise_invalid_num_lines_error(
-        self, num_lines_expected, num_lines_in_data):
+    def _raise_invalid_num_lines_error(self, num_lines_expected, num_lines_in_data):
 
         pass
 
     def _raise_invalid_write_num_chans_error(
-        self, number_of_channels, number_of_channels_in_data):
+        self, number_of_channels, number_of_channels_in_data
+    ):
 
         pass
 

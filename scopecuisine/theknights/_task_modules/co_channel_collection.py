@@ -1,4 +1,3 @@
-
 class COChannelCollection(object):
     def __init__(self, task_handle):
         self.task_handle = task_handle
