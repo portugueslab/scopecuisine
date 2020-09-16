@@ -3,6 +3,7 @@ from PyQt5.QtWidgets import (
     QDockWidget,
 )
 
+
 class DockedWidget(QDockWidget):
     def __init__(self, widget=None, layout=None, title=""):
         super().__init__()
@@ -13,4 +14,3 @@ class DockedWidget(QDockWidget):
             self.widget().setLayout(layout)
         if title != "":
             self.setWindowTitle(title)
-

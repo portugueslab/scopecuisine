@@ -36,4 +36,3 @@ class YagmailNotifier(AbstractNotifier):
             yagmail.error.YagInvalidEmailAddress,
         ):
             return False
-

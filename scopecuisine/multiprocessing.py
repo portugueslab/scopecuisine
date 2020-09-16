@@ -10,5 +10,3 @@ def get_last_parameters(parameter_queue, timeout=0.001):
         except Empty:
             break
     return params
-
-

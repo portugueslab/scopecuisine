@@ -6,7 +6,7 @@ class Task(object):
     Represents a fake DAQmx Task.
     """
 
-    def __init__(self, new_task_name='The_knights(who_say_NI)'):
+    def __init__(self, new_task_name="The_knights(who_say_NI)"):
         """
         Creates a fake DAQmx task.
         """
@@ -33,7 +33,7 @@ class Task(object):
         return not self.__eq__(other)
 
     def __repr__(self):
-        return 'Task(name={0})'.format(self.name)
+        return "Task(name={0})".format(self.name)
 
     @property
     def channels(self):
@@ -261,8 +261,7 @@ class Task(object):
 
         return True
 
-    def read(self, number_of_samples_per_channel=1,
-             timeout=10.0):
+    def read(self, number_of_samples_per_channel=1, timeout=10.0):
         """
         Reads samples from the task or virtual channels you specify.
 
@@ -343,7 +342,7 @@ class Task(object):
             <type 'float'>
         """
 
-        return [0.] * number_of_samples_per_channel
+        return [0.0] * number_of_samples_per_channel
 
     def register_done_event(self, callback_method):
         """
@@ -375,7 +374,8 @@ class Task(object):
         pass
 
     def register_every_n_samples_acquired_into_buffer_event(
-        self, sample_interval, callback_method):
+        self, sample_interval, callback_method
+    ):
         """
         Registers a callback function to receive an event when the specified
         number of samples is written from the device to the buffer. This
@@ -411,7 +411,8 @@ class Task(object):
         pass
 
     def register_every_n_samples_transferred_from_buffer_event(
-        self, sample_interval, callback_method):
+        self, sample_interval, callback_method
+    ):
         """
         Registers a callback function to receive an event when the specified
         number of samples is written from the buffer to the device. This
@@ -477,8 +478,14 @@ class Task(object):
         """
         pass
 
-    def save(self, save_as="", author="", overwrite_existing_task=False,
-             allow_interactive_editing=True, allow_interactive_deletion=True):
+    def save(
+        self,
+        save_as="",
+        author="",
+        overwrite_existing_task=False,
+        allow_interactive_editing=True,
+        allow_interactive_deletion=True,
+    ):
         """
         Saves this task and any local channels it contains to MAX.
 
@@ -516,11 +523,13 @@ class Task(object):
 
         cfunc = lib_importer.windll.DAQmxSaveTask
         cfunc.argtypes = [
-            lib_importer.task_handle, ctypes_byte_str, ctypes_byte_str,
-            ctypes.c_uint]
+            lib_importer.task_handle,
+            ctypes_byte_str,
+            ctypes_byte_str,
+            ctypes.c_uint,
+        ]
 
-        error_code = cfunc(
-            self._handle, save_as, author, options)
+        error_code = cfunc(self._handle, save_as, author, options)
         check_for_error(error_code)
 
     def start(self):
@@ -574,12 +583,12 @@ class Task(object):
         """
         pass
 
-    def _raise_invalid_num_lines_error(
-        self, num_lines_expected, num_lines_in_data):
+    def _raise_invalid_num_lines_error(self, num_lines_expected, num_lines_in_data):
         pass
 
     def _raise_invalid_write_num_chans_error(
-        self, number_of_channels, number_of_channels_in_data):
+        self, number_of_channels, number_of_channels_in_data
+    ):
 
         pass
 

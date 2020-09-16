@@ -8,4 +8,3 @@ def test_yagmail():
 
     notifier = YagmailNotifier("test", sender="a@b.com", password="", receiver="")
     assert not notifier.notify()
-

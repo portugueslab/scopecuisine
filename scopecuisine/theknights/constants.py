@@ -229,7 +229,9 @@ class DataJustification(Enum):
 class DataTransferActiveTransferMode(Enum):
     DMA = 10054  #: Direct Memory Access. Data transfers take place independently from the application.
     INTERRUPT = 10204  #: Data transfers take place independently from the application. Using interrupts increases CPU usage because the CPU must service interrupt requests. Typically, you should use interrupts if the device is out of DMA channels.
-    POLLED = 10264  #: Data transfers take place when you call DAQmx Read or DAQmx Write.
+    POLLED = (
+        10264  #: Data transfers take place when you call DAQmx Read or DAQmx Write.
+    )
     USB_BULK = 12590  #: Data transfers take place independently from the application using a USB bulk pipe.
 
 
@@ -245,8 +247,12 @@ class DigitalDriveType(Enum):
 
 
 class DigitalPatternCondition(Enum):
-    PATTERN_MATCHES = 10254  #: Trigger when the physical channels match the specified pattern.
-    PATTERN_DOES_NOT_MATCH = 10253  #: Trigger when the physical channels do not match the specified pattern.
+    PATTERN_MATCHES = (
+        10254  #: Trigger when the physical channels match the specified pattern.
+    )
+    PATTERN_DOES_NOT_MATCH = (
+        10253  #: Trigger when the physical channels do not match the specified pattern.
+    )
 
 
 class DigitalWidthUnits(Enum):
@@ -277,7 +283,9 @@ class EncoderType(Enum):
 
 class EncoderZIndexPhase(Enum):
     AHIGH_BHIGH = 10040  #: Reset the measurement when signal A and signal B are high.
-    AHIGH_BLOW = 10041  #: Reset the measurement when signal A is high and signal B is low.
+    AHIGH_BLOW = (
+        10041  #: Reset the measurement when signal A is high and signal B is low.
+    )
     ALOW_BHIGH = 10042  #: Reset the measurement when signal A is low and signal B high.
     ALOW_BLOW = 10043  #: Reset the measurement when signal A and signal B are low.
 
@@ -310,7 +318,9 @@ class ExcitationVoltageOrCurrent(Enum):
 
 class ExportAction(Enum):
     PULSE = 10265  #: Send a pulse to the terminal.
-    TOGGLE = 10307  #: Toggle the state of the terminal from low to high or from high to low.
+    TOGGLE = (
+        10307  #: Toggle the state of the terminal from low to high or from high to low.
+    )
     LEVEL = 10210  #: The exported Sample Clock goes high at the beginning of the sample and goes low when the last AI Convert begins.
     INTERLOCKED = 12549  #: Handshake Event deasserts after the Handshake Trigger asserts, plus the amount of time specified with **hshk_event_interlocked_deassert_delay**.
 
@@ -368,8 +378,12 @@ class GpsSignalType(Enum):
 
 class HandshakeStartCondition(Enum):
     IMMEDIATE = 10198  #: Device is waiting for space in the FIFO (for acquisition) or waiting for samples (for generation).
-    WAIT_FOR_HANDSHAKE_TRIGGER_ASSERT = 12550  #: Device is waiting for the Handshake Trigger to assert.
-    WAIT_FOR_HANDSHAKE_TRIGGER_DEASSERT = 12551  #: Device is waiting for the Handshake Trigger to deassert.
+    WAIT_FOR_HANDSHAKE_TRIGGER_ASSERT = (
+        12550  #: Device is waiting for the Handshake Trigger to assert.
+    )
+    WAIT_FOR_HANDSHAKE_TRIGGER_DEASSERT = (
+        12551  #: Device is waiting for the Handshake Trigger to deassert.
+    )
 
 
 class Impedance1(Enum):
@@ -389,7 +403,9 @@ class InputDataTransferCondition(Enum):
     ON_BOARD_MEMORY_MORE_THAN_HALF_FULL = 10237  #: Transfer data from the device when more than half of the onboard memory of the device fills.
     ON_BOARD_MEMORY_NOT_EMPTY = 10241  #: Transfer data from the device when there is data in the onboard memory.
     ONBOARD_MEMORY_CUSTOM_THRESHOLD = 12577  #: Transfer data from the device when the number of samples specified with **ai_data_xfer_custom_threshold** are in the device FIFO.
-    WHEN_ACQUISITION_COMPLETE = 12546  #: Transfer data when the acquisition is complete.
+    WHEN_ACQUISITION_COMPLETE = (
+        12546  #: Transfer data when the acquisition is complete.
+    )
 
 
 class LVDTSensitivityUnits(Enum):
@@ -435,7 +451,9 @@ class LoggingMode(Enum):
 class LoggingOperation(Enum):
     OPEN = 10437  #: Open an existing TDMS file, and append data to that file. If the file does not exist, NI-DAQmx returns an error.
     OPEN_OR_CREATE = 15846  #: Open an existing TDMS file, and append data to that file. If the file does not exist, NI-DAQmx creates a new TDMS file.
-    CREATE_OR_REPLACE = 15847  #: Create a new TDMS file, or replace an existing TDMS file.
+    CREATE_OR_REPLACE = (
+        15847  #: Create a new TDMS file, or replace an existing TDMS file.
+    )
     CREATE = 15848  #: Create a new TDMS file. If the file already exists, NI-DAQmx returns an error.
 
 
@@ -473,7 +491,9 @@ class OutputDataTransferCondition(Enum):
 
 class OverflowBehavior(Enum):
     TOP_TASK_AND_ERROR = 15862  #: Stop task and return an error.
-    GNORE_OVERRUNS = 15863  #: NI-DAQmx ignores Sample Clock overruns, and the task continues to run.
+    GNORE_OVERRUNS = (
+        15863  #: NI-DAQmx ignores Sample Clock overruns, and the task continues to run.
+    )
 
 
 class OverwriteMode(Enum):
@@ -560,7 +580,9 @@ class RawDataCompressionType(Enum):
 
 
 class ReadRelativeTo(Enum):
-    FIRST_SAMPLE = 10424  #: Start reading samples relative to the first sample acquired.
+    FIRST_SAMPLE = (
+        10424  #: Start reading samples relative to the first sample acquired.
+    )
     CURRENT_READ_POSITION = 10425  #: Start reading samples relative to the last sample returned by the previous read. For the first read operation, this position is the first sample acquired or the first pretrigger sample if you configured a reference trigger for the task.
     REFERENCE_TRIGGER = 10426  #: Start reading samples relative to the first sample after the reference trigger occurred.
     FIRST_PRETRIGGER_SAMPLE = 10427  #: Start reading samples relative to the first pretrigger sample. You specify the number of pretrigger samples to acquire when you configure a reference trigger.
@@ -615,11 +637,15 @@ class SampClkOverrunBehavior(Enum):
 
 class SampleInputDataWhen(Enum):
     HANDSHAKE_TRIGGER_ASSERTS = 12552  #: Latch data when the Handshake Trigger asserts.
-    HANDSHAKE_TRIGGER_DEASSERTS = 12553  #: Latch data when the Handshake Trigger deasserts.
+    HANDSHAKE_TRIGGER_DEASSERTS = (
+        12553  #: Latch data when the Handshake Trigger deasserts.
+    )
 
 
 class SampleTimingType(Enum):
-    SAMPLE_CLOCK = 10388  #: Acquire or generate samples on the specified edge of the sample clock.
+    SAMPLE_CLOCK = (
+        10388  #: Acquire or generate samples on the specified edge of the sample clock.
+    )
     BURST_HANDSHAKE = 12548  #: Determine sample timing using burst handshaking between the device and a peripheral device.
     HANDSHAKE = 10389  #: Determine sample timing by using digital handshaking between the device and a peripheral device.
     IMPLICIT = 10451  #: Configure only the duration of the task.
@@ -670,16 +696,24 @@ class Signal(Enum):
     AI_CONVERT_CLOCK = 12484  #:
     TEN_M_HZ_REF_CLOCK = 12536  #:
     TWENTY_M_HZ_TIMEBASE_CLOCK = 12486  #:
-    SAMPLE_CLOCK = 12487  #: Timed Loop executes on each active edge of the Sample Clock.
+    SAMPLE_CLOCK = (
+        12487  #: Timed Loop executes on each active edge of the Sample Clock.
+    )
     ADVANCE_TRIGGER = 12488  #:
     REFERENCE_TRIGGER = 12490  #:
     START_TRIGGER = 12491  #:
     ADV_CMPLT_EVENT = 12492  #:
     AI_HOLD_CMPLT_EVENT = 12493  #:
-    COUNTER_OUTPUT_EVENT = 12494  #: Timed Loop executes each time the Counter Output Event occurs.
-    CHANGE_DETECTION_EVENT = 12511  #: Timed Loop executes each time the Change Detection Event occurs.
+    COUNTER_OUTPUT_EVENT = (
+        12494  #: Timed Loop executes each time the Counter Output Event occurs.
+    )
+    CHANGE_DETECTION_EVENT = (
+        12511  #: Timed Loop executes each time the Change Detection Event occurs.
+    )
     WATCHDOG_TIMER_EXPIRED_EVENT = 12512  #:
-    SAMPLE_COMPLETE = 12530  #: Timed Loop executes each time the Sample Complete Event occurs.
+    SAMPLE_COMPLETE = (
+        12530  #: Timed Loop executes each time the Sample Complete Event occurs.
+    )
 
 
 class SignalModifiers(Enum):
@@ -719,12 +753,16 @@ class StrainGageBridgeType(Enum):
 class StrainGageRosetteMeasurementType(Enum):
     PRINCIPAL_STRAIN_1 = 15971  #: The maximum tensile strain coplanar to the surface of the material under stress.
     PRINCIPAL_STRAIN_2 = 15972  #: The minimum tensile strain coplanar to the surface of the material under stress.
-    PRINCIPAL_STRAIN_ANGLE = 15973  #: The angle at which the principal strains of the rosette occur.
+    PRINCIPAL_STRAIN_ANGLE = (
+        15973  #: The angle at which the principal strains of the rosette occur.
+    )
     CARTESIAN_STRAIN_X = 15974  #: The tensile strain coplanar to the surface of the material under stress in the X coordinate direction.
     CARTESIAN_STRAIN_Y = 15975  #: The tensile strain coplanar to the surface of the material under stress in the Y coordinate direction.
     CARTESIAN_SHEAR_STRAIN_XY = 15976  #: The tensile strain coplanar to the surface of the material under stress in the XY coordinate direction.
     MAX_SHEAR_STRAIN = 15977  #: The maximum strain coplanar to the cross section of the material under stress.
-    MAX_SHEAR_STRAIN_ANGLE = 15978  #: The angle at which the maximum shear strain of the rosette occurs.
+    MAX_SHEAR_STRAIN_ANGLE = (
+        15978  #: The angle at which the maximum shear strain of the rosette occurs.
+    )
 
 
 class StrainGageRosetteType(Enum):
@@ -741,7 +779,9 @@ class StrainUnits(Enum):
 class SwitchChannelUsage(Enum):
     SOURCE_CHANNEL = 10439  #: You can use the channel only as an input for a signal.
     LOAD_CHANNEL = 10440  #: You can use the channel only as the output for a signal passing through the switch.
-    RESERVED_FOR_ROUTING_CHANNEL = 10441  #: You can use the channel only to complete routes within a switch.
+    RESERVED_FOR_ROUTING_CHANNEL = (
+        10441  #: You can use the channel only to complete routes within a switch.
+    )
 
 
 class SyncType(Enum):
@@ -815,7 +855,9 @@ class TorqueUnits(Enum):
 class TriggerType(Enum):
     NONE = 10230  #: Disable reference triggering for the task.
     ANALOG_LEVEL = 10101  #: Pause the measurement or generation while an analog signal is above or below a level.
-    ANALOG_WINDOW = 10103  #: Trigger when an analog signal enters or leaves a range of values.
+    ANALOG_WINDOW = (
+        10103  #: Trigger when an analog signal enters or leaves a range of values.
+    )
     DIGITAL_EDGE = 10150  #: Trigger on a rising or falling edge of a digital pulse.
     DIGITAL_LEVEL = 10152  #: Pause the measurement or generation while a digital signal is at either a high or low state.
     DIGITAL_PATTERN = 10398  #: Pause the measurement or generation while digital physical channels either match or do not match a digital pattern.
@@ -835,7 +877,9 @@ class TriggerUsage(Enum):
 
 class UnderflowBehavior(Enum):
     HALT_OUTPUT_AND_ERROR = 14615  #: Stop generating samples and return an error.
-    AUSE_UNTIL_DATA_AVAILABLE = 14616  #: Pause the task until samples are available in the FIFO.
+    AUSE_UNTIL_DATA_AVAILABLE = (
+        14616  #: Pause the task until samples are available in the FIFO.
+    )
 
 
 class UnitsPreScaled(Enum):
@@ -885,7 +929,9 @@ class UsageTypeAI(Enum):
     VOLTAGE_CUSTOM_WITH_EXCITATION = 10323  #: Voltage measurement with an excitation source. You can use this measurement type for custom sensors that require excitation, but you must use a custom scale to scale the measured voltage.
     CURRENT = 10134  #: Current measurement.
     CURRENT_ACRMS = 10351  #: Current RMS measurement.
-    FREQUENCY_VOLTAGE = 10181  #: Frequency measurement using a frequency to voltage converter.
+    FREQUENCY_VOLTAGE = (
+        10181  #: Frequency measurement using a frequency to voltage converter.
+    )
     RESISTANCE = 10278  #: Resistance measurement.
     TEMPERATURE_THERMOCOUPLE = 10303  #: Temperature measurement using a thermocouple.
     TEMPERATURE_THERMISTOR = 10302  #: Temperature measurement using a thermistor.
@@ -893,13 +939,21 @@ class UsageTypeAI(Enum):
     TEMPERATURE_RTD = 10301  #: Temperature measurement using an RTD.
     POSITION_LINEAR_LVDT = 10352  #: Position measurement using an LVDT.
     POSITION_ANGULAR_RVDT = 10353  #: Position measurement using an RVDT.
-    POSITION_EDDY_CURRENT_PROX_PROBE = 14835  #: Position measurement using an eddy current proximity probe.
+    POSITION_EDDY_CURRENT_PROX_PROBE = (
+        14835  #: Position measurement using an eddy current proximity probe.
+    )
     SOUND_PRESSURE_MICROPHONE = 10354  #: Sound pressure measurement using a microphone.
     STRAIN_STRAIN_GAGE = 10300  #: Strain measurement.
     ROSETTE_STRAIN_GAGE = 15980  #: Strain measurement using a rosette strain gage.
-    ACCELERATION_ACCELEROMETER_CURRENT_INPUT = 10356  #: Acceleration measurement using an accelerometer.
-    ACCELERATION_CHARGE = 16104  #: Acceleration measurement using a charge-based sensor.
-    ACCELERATION_4_WIRE_DC_VOLTAGE = 16106  #: Acceleration measurement using a 4 wire DC voltage based sensor.
+    ACCELERATION_ACCELEROMETER_CURRENT_INPUT = (
+        10356  #: Acceleration measurement using an accelerometer.
+    )
+    ACCELERATION_CHARGE = (
+        16104  #: Acceleration measurement using a charge-based sensor.
+    )
+    ACCELERATION_4_WIRE_DC_VOLTAGE = (
+        16106  #: Acceleration measurement using a 4 wire DC voltage based sensor.
+    )
     VELOCITY_IEPE_SENSOR = 15966  #: Velocity measurement using an IEPE Sensor.
     FORCE_IEPE_SENSOR = 15895  #: Force measurement using an IEPE Sensor.
     FORCE_BRIDGE = 15899  #: Force measurement using a bridge-based sensor.
@@ -920,23 +974,45 @@ class UsageTypeCI(Enum):
     FREQUENCY = 10179  #: Measure the frequency of a digital signal.
     PERIOD = 10256  #: Measure the period of a digital signal.
     PULSE_WIDTH_DIGITAL = 10359  #: Measure the width of a pulse of a digital signal.
-    PULSE_WIDTH_DIGITAL_TWO_EDGE_SEPARATION = 10267  #: Measure time between edges of two digital signals.
-    PULSE_WIDTH_DIGITAL_SEMI_PERIOD = 10289  #: Measure the time between state transitions of a digital signal.
-    PULSE_FREQ = 15864  #: Pulse measurement, returning the result as frequency and duty cycle.
-    PULSE_TIME = 15865  #: Pulse measurement, returning the result as high time and low time.
-    PULSE_TICKS = 15866  #: Pulse measurement, returning the result as high ticks and low ticks.
+    PULSE_WIDTH_DIGITAL_TWO_EDGE_SEPARATION = (
+        10267  #: Measure time between edges of two digital signals.
+    )
+    PULSE_WIDTH_DIGITAL_SEMI_PERIOD = (
+        10289  #: Measure the time between state transitions of a digital signal.
+    )
+    PULSE_FREQ = (
+        15864  #: Pulse measurement, returning the result as frequency and duty cycle.
+    )
+    PULSE_TIME = (
+        15865  #: Pulse measurement, returning the result as high time and low time.
+    )
+    PULSE_TICKS = (
+        15866  #: Pulse measurement, returning the result as high ticks and low ticks.
+    )
     COUNT_EDGES = 10125  #: Count edges of a digital signal.
-    POSITION_ANGULAR_ENCODER = 10360  #: Angular position measurement using an angular encoder.
-    POSITION_LINEAR_ENCODER = 10361  #: Linear position measurement using a linear encoder.
-    TIME_GPS = 10362  #: Timestamp measurement, synchronizing the counter to a GPS receiver.
+    POSITION_ANGULAR_ENCODER = (
+        10360  #: Angular position measurement using an angular encoder.
+    )
+    POSITION_LINEAR_ENCODER = (
+        10361  #: Linear position measurement using a linear encoder.
+    )
+    TIME_GPS = (
+        10362  #: Timestamp measurement, synchronizing the counter to a GPS receiver.
+    )
     DUTY_CYCLE = 16070  #: Measure the duty cycle of a digital signal.
-    VELOCITY_ANGULAR_ENCODER = 16078  #: Angular velocity measurement using an angular encoder.
-    VELOCITY_LINEAR_ENCODER = 16079  #: Linear velocity measurement using a linear encoder.
+    VELOCITY_ANGULAR_ENCODER = (
+        16078  #: Angular velocity measurement using an angular encoder.
+    )
+    VELOCITY_LINEAR_ENCODER = (
+        16079  #: Linear velocity measurement using a linear encoder.
+    )
 
 
 class UsageTypeCO(Enum):
     PULSE_TIME = 10269  #: Generate pulses defined by the time the pulse is at a low state and the time the pulse is at a high state.
-    PULSE_FREQUENCY = 10119  #: Generate digital pulses defined by frequency and duty cycle.
+    PULSE_FREQUENCY = (
+        10119  #: Generate digital pulses defined by frequency and duty cycle.
+    )
     PULSE_TICKS = 10268  #: Generate digital pulses defined by the number of timebase ticks that the pulse is at a low state and the number of timebase ticks that the pulse is at a high state.
 
 
@@ -1005,7 +1081,9 @@ class WriteBasicTEDSOptions(Enum):
 
 class WriteRelativeTo(Enum):
     FIRST_SAMPLE = 10424  #: Write samples relative to the first sample.
-    CURRENT_WRITE_POSITION = 10430  #: Write samples relative to the current position in the buffer.
+    CURRENT_WRITE_POSITION = (
+        10430  #: Write samples relative to the current position in the buffer.
+    )
 
 
 class _Callback(Enum):

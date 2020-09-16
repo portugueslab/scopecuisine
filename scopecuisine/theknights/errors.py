@@ -8,13 +8,14 @@ import warnings
 
 from scopecuisine.theknights.error_codes import DAQmxErrors, DAQmxWarnings
 
-__all__ = ['DaqError', 'DaqWarning', 'DaqResourceWarning']
+__all__ = ["DaqError", "DaqWarning", "DaqResourceWarning"]
 
 
 class Error(Exception):
     """
     Base error class for module.
     """
+
     pass
 
 
@@ -22,14 +23,15 @@ class DaqError(Error):
     """
     Error raised by any DAQmx method.
     """
-    def __init__(self, message, error_code, task_name=''):
+
+    def __init__(self, message, error_code, task_name=""):
         """
         Args:
             message (string): Specifies the error message.
             error_code (int): Specifies the NI-DAQmx error code.
         """
         if task_name:
-            message = '{0}\n\nTask Name: {1}'.format(message, task_name)
+            message = "{0}\n\nTask Name: {1}".format(message, task_name)
 
         super(DaqError, self).__init__(message)
 
@@ -60,6 +62,7 @@ class DaqWarning(Warning):
     """
     Warning raised by any NI-DAQmx method.
     """
+
     def __init__(self, message, error_code):
         """
         Args:
@@ -67,7 +70,8 @@ class DaqWarning(Warning):
             error_code (int): Specifies the NI-DAQmx error code.
         """
         super(DaqWarning, self).__init__(
-            '\nWarning {0} occurred.\n\n{1}'.format(error_code, message))
+            "\nWarning {0} occurred.\n\n{1}".format(error_code, message)
+        )
 
         self._error_code = error_code
 
@@ -97,6 +101,7 @@ class _ResourceWarning(Warning):
     Resource warning raised by any NI-DAQmx method.
     Used in place of built-in ResourceWarning to allow Python 2.7 support.
     """
+
     pass
 
 
@@ -112,8 +117,9 @@ warnings.filterwarnings("always", category=DaqResourceWarning)
 
 def is_string_buffer_too_small(error_code):
     return (
-        error_code == DAQmxErrors.BUFFER_TOO_SMALL_FOR_STRING.value or
-        error_code == DAQmxWarnings.CAPI_STRING_TRUNCATED_TO_FIT_BUFFER.value)
+        error_code == DAQmxErrors.BUFFER_TOO_SMALL_FOR_STRING.value
+        or error_code == DAQmxWarnings.CAPI_STRING_TRUNCATED_TO_FIT_BUFFER.value
+    )
 
 
 def is_array_buffer_too_small(error_code):
